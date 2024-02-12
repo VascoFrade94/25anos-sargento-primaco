@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            background-image: url('https://example.com/happy_birthday_background.jpg'); /* Replace 'https://example.com/happy_birthday_background.jpg' with your actual image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday!</h1>
+        <p>Fill out the form below to receive a special birthday message and a happy song!</p>
+        <form id="birthdayForm">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Your Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("birthdayForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            alert("Happy Birthday, " + name + "!");
+            var audio = new Audio('https://example.com/happy_birthday_song.mp3'); // Replace 'https://example.com/happy_birthday_song.mp3' with your actual audio URL
+            audio.play();
+        });
+    </script>
+</body>
+</html>
